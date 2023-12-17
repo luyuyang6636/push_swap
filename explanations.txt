@@ -1,0 +1,16 @@
+-ft_find_place_b: return an integer i that shows what 'index' number it belongs in stack b. 
+when we rrb, the amount of steps  needed would be lstsize(b) - i
+
+-find_index: checks the index number of the number in its current stack
+
+-ft_case_rrarrb: reverse rotatee (shift everything down by 1) for both stacks. i is normally initiated
+as this in rotate_type_ab function 
+
+-ft_sort_b_till_3
+sorts the list b, pushing from a to b. two while loop here 
+
+#there are 4 cases: rrarrb, rrarb, rarrb, rarb. these are just indicating the direction both lists should 
+be rotated. the return value of these are the least costly steps to push from a to b for it to be sorted.
+when we have the apply functions, we will deal with specifics. 
+
+#the apply functions, apply for both pushing to stack b and pushing to stack a. 
