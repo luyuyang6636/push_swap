@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void    ft_sb(t_list **b, int j)
+void    ft_sb(t_list **b, int i)
 {
     t_list *tmp;
 
@@ -10,7 +10,7 @@ void    ft_sb(t_list **b, int j)
     *b = (*b)->next;
     tmp->next = (*b)->next;
     (*b)->next = tmp;
-    if (j == 1)
+    if (i == 1)
         write (1, "sb\n", 3);
 }
 
@@ -28,10 +28,12 @@ void    ft_pb(t_list **a, t_list **b)
 void    ft_rb(t_list **b, int j)
 {
     t_list *tmp;
+
     if (!*b || !(*b)->next)
         return;
     tmp = *b;
     *b = (*b)->next;
+    tmp->next = NULL;
     ft_lstadd_back(b, tmp);
     if (j == 1)
         write(1, "rb\n", 3);

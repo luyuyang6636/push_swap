@@ -1,17 +1,17 @@
 #include "push_swap.h"
 
-void    ft_ra(t_list **a)
+void    ft_ra(t_list **a, int j)
 {
     t_list  *tmp;
     
     if (!*a || !(*a)->next)
         return;
     tmp = *a;
-    *a = ft_lstlast(*a);
-    (*a)->next = tmp;
-    *a = tmp->next;
+    *a = (*a)->next;
     tmp->next = NULL;
-    write (1, "ra\n", 3);
+    ft_lstadd_back(a, tmp);
+    if (j == 1)
+        write(1, "ra\n", 3);
 }
 
 /* first let a points to the last element of the list, then (*a)->next = tmp connects the last
@@ -20,7 +20,7 @@ last item, which should be the last item in the original list, and set tmp->next
 **a points to the original last item, and because we linked it in a circular structure, the 
 original list now follow behind the new *a.
 */
-void    ft_rra(t_list **a)
+void    ft_rra(t_list **a, int j)
 {
     t_list *tmp;
     int i;
@@ -38,10 +38,11 @@ void    ft_rra(t_list **a)
     while (i-- > 1)
         tmp = tmp->next;
     tmp->next = NULL;
-    write (1, "rra\n", 4);
+    if (j == 1)
+        write (1, "rra\n", 4);
 }
 
-void    ft_sa(t_list **a)
+void    ft_sa(t_list **a, int i)
 {
     t_list *tmp;
 
@@ -51,7 +52,8 @@ void    ft_sa(t_list **a)
     *a = (*a)->next;
     tmp->next = (*a)->next;
     (*a)->next = tmp;
-    write(1, "sa\n", 3);
+    if (i == 1)
+        write(1, "sa\n", 3);
 }
 
 void    ft_pb(t_list **a, t_list **b)

@@ -1,5 +1,12 @@
 -ft_find_place_b: return an integer i that shows what 'index' number it belongs in stack b. 
-when we rrb, the amount of steps  needed would be lstsize(b) - i
+when we rrb, the amount of steps  needed would be lstsize(b) - i.
+there are 3 cases: 
+1, if the number can be pushed straight from a to b, meaning it is bigger than the current 
+top of the list in b, and smaller than the last of list.
+2, the number will be the biggest/smallest number in b, so we ft_find_index the current max number in
+the list, and that will be the index of our number.
+3, compare the number to both the current number in stack b and also the next number in list, either 
+the number is bigger than current number in b, or smaller than the next number in b, then th  
 
 -find_index: checks the index number of the number in its current stack
 
@@ -7,7 +14,16 @@ when we rrb, the amount of steps  needed would be lstsize(b) - i
 as this in rotate_type_ab function 
 
 -ft_sort_b_till_3
-sorts the list b, pushing from a to b. two while loop here 
+sorts the list b, pushing from a to b. two while loop here. the outside loop check for if lstsize a is
+bigger than 3 and if it is sorted (if a is already sorted, then no need to push more numbers to b, can
+just start pushing the numbers in b back to a). we have a counter here that is the return value of
+rotate_type_ab, which is the cheapest move possible. check which number in a we need to move by
+comparing this counter value to the 4 cases (applied to the number), and we now use the apply functions
+to carry out the moves. we do this until counter < 0, 
+
+-rotate_type_ab: find out the least moves needed to push one number from a to b for the number in a to
+land in the right position in b. consider the 4 cases, and have a counter to record the least move and
+return to ft_sort_b_till_3.
 
 #there are 4 cases: rrarrb, rrarb, rarrb, rarb. these are just indicating the direction both lists should 
 be rotated. the return value of these are the least costly steps to push from a to b for it to be sorted.

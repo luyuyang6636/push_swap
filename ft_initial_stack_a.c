@@ -47,6 +47,26 @@ void    ft_all_number(char **argv)
     }
 }
 
+void    ft_lst_check_dup(t_list *a)
+{
+    t_list *tmp;
+
+    if (!a->next)
+        return;
+    tmp = a;
+    while (tmp && tmp->next)
+    {
+        a = tmp->next;
+        while (a)
+        {
+            if (a->content == tmp->content)
+                ft_error;
+            a = a->next;
+        }
+        tmp = tmp->next;
+    }
+}
+
 t_list *ft_fill_stack_a(int argc, char **argv)
 {
     t_list *a;
@@ -63,5 +83,6 @@ t_list *ft_fill_stack_a(int argc, char **argv)
         ft_lstadd_back(&a, ft_lstnew(nbr));
         i++;
     }
+    ft_lst_check_dup(a);
     return (a);
 }
