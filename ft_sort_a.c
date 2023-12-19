@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-t_list  *ft_sort_a(t_list **a, t_list **b)
+t_list  **ft_sort_a(t_list **a, t_list **b)
 {
     int i;
     t_list  *tmp;
@@ -23,6 +23,7 @@ t_list  *ft_sort_a(t_list **a, t_list **b)
                 tmp = tmp->next;
         }
     }
+    return (a); 
 }
 
 int ft_rotate_type_ba(t_list *a, t_list *b)

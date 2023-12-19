@@ -19,26 +19,6 @@ int ft_find_index(t_list *lst, int nbr)
     return (i);
 }
 
-int ft_find_index_b(t_list *b, int nbr)
-{
-    int i;
-
-    i = 1;
-    if (nbr > b->content && nbr < ft_lstlast(b))
-        i = 0;
-    else if (nbr > ft_lstmax(b) || nbr < ft_lstmin(b))
-        i = ft_find_index(b, ft_lstmax);
-    else
-    {
-        while (nbr > b->content || nbr < b->next->content)
-        {
-            i++;
-            b = b->next;
-        }
-    }
-    return (i);
-}
-
 int ft_lstmax(t_list *lst)
 {
     int lstmax;
@@ -65,4 +45,18 @@ int ft_lstmin(t_list *lst)
         lst = lst->next;
     }
     return (lstmin);
+}
+
+void    ft_free(t_list **a)
+{
+    t_list  *tmp;
+
+    if (!a)
+        return;
+    while (*a)
+    {
+        tmp = (*a)->next;
+        free (*a);
+        *a = tmp;
+    }
 }

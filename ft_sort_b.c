@@ -1,5 +1,25 @@
 #include "push_swap.h"
 
+int ft_find_index_b(t_list *b, int nbr)
+{
+    int i;
+
+    i = 1;
+    if (nbr > b->content && nbr < ft_lstlast(b))
+        i = 0;
+    else if (nbr > ft_lstmax(b) || nbr < ft_lstmin(b))
+        i = ft_find_index(b, ft_lstmax);
+    else
+    {
+        while (!(nbr < b->content && nbr > b->next->content))
+        {
+            i++;
+            b = b->next;
+        }
+    }
+    return (i);
+}
+
 void    ft_sort_b_till_3(t_list **a, t_list **b)
 {
     int i;

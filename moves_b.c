@@ -14,13 +14,17 @@ void    ft_sb(t_list **b, int i)
         write (1, "sb\n", 3);
 }
 
-void    ft_pb(t_list **a, t_list **b)
+void    ft_pa(t_list **a, t_list **b)
 {
     t_list *tmp;
 
     if (!*a)
         return;
-    tmp = *b;
+    tmp = *a;
+    *a = *b;
+    *b = (*b)->next;
+    (*a)->next = tmp;
+    write (1, "pa\n", 3);
 }
 
 void    ft_rb(t_list **b, int j)

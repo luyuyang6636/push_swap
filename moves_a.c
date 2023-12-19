@@ -62,8 +62,9 @@ void    ft_pb(t_list **a, t_list **b)
 
     if (!*a)
         return;
-    tmp = *a;
+    tmp = *b;
+    *b = *a;
     *a = (*a)->next;
-    ft_lstadd_front(b, tmp);
-    write(1, "pb\n", 3);
+    (*b)->next = tmp;
+    write (1, "pb\n", 3);
 }
