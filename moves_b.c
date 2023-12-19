@@ -17,12 +17,10 @@ void    ft_sb(t_list **b, int i)
 void    ft_pb(t_list **a, t_list **b)
 {
     t_list *tmp;
-    if (!*b || !(*b)->next)
+
+    if (!*a)
         return;
     tmp = *b;
-    b = (*b)->next;
-    ft_lstadd_front(a, tmp);
-    write(1, "pb\n", 3);
 }
 
 void    ft_rb(t_list **b, int j)

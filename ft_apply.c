@@ -12,6 +12,16 @@ int ft_apply_rrarrb(t_list **a, t_list **b, int nbr, char c)
             ft_rrb(b, 1);
         ft_pb(a, b);
     }
+    if (c == 'a')
+    {
+        while (ft_find_index(*b, nbr) && ft_find_index_a(*a, nbr))
+            ft_rrr(a, b);
+        while (ft_find_index(*b, nbr))
+            ft_rrb(b, 1);
+        while (ft_find_index_a(*a, nbr))
+            ft_rra(a, 1);
+
+    }
     return (-1);
 }
 

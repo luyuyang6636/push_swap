@@ -32,6 +32,12 @@ int ft_case_rrarb(t_list *a, t_list *b, int nbr, char c)
         if (ft_find_index(a, nbr))
             i += ft_lstsize(a) - ft_find_index(a, nbr);
     }
+    if (c =='a')
+    {
+        i = ft_find_index(b, nbr);
+        if (ft_find_index_a(a, nbr))
+            i += ft_lstsize(a) - ft_find_index_a(a, nbr);
+    }
     return (i);
 }
 
@@ -45,6 +51,12 @@ int ft_case_rarrb(t_list *a, t_list *b, int nbr, char c)
         if (ft_find_index_b(b, nbr))
             i += ft_lstsize(b) - ft_find_index_b(b, nbr);
     }
+    if (c == 'a')
+    {
+        i = ft_find_index_a(a, nbr);
+        if (ft_find_index(b, nbr))
+            i += ft_lstsize(a) - ft_find_index(b, nbr);
+    }
     return (i);
 }
 
@@ -57,6 +69,12 @@ int ft_case_rarb(t_list *a, t_list *b, int nbr, char c)
         i = ft_find_index(a, nbr);
         if (i < ft_find_index_b(b, nbr))
             i = ft_find_index_b(b, nbr);
+    }
+    if (c == 'a')
+    {
+        i = ft_find_index(b, nbr);
+        if (i < ft_find_index_a(a, nbr))
+            i = ft_find_index_a(a, nbr);
     }
     return (i);
 }
