@@ -39,20 +39,21 @@ void    ft_sort(t_list **a)
     else
     {
         b = ft_sort_b(a);
-        a = ft_sort_a(a, &b);
+        a = ft_sort_a(a, &b);    
+        lstmin = ft_lstmin(*a);
+        i = ft_find_index(*a, lstmin);
+        if (i < ft_lstsize(*a) - i)
+        {
+            while ((*a)->content != lstmin)
+                ft_ra(a, 1);
+        }
+        else
+        {
+            while((*a)->content != lstmin)
+                ft_rra(a, 1);
+        }
     }
-    lstmin = ft_lstmin(*a);
-    i = ft_find_index(*a, lstmin);
-    if (i < ft_lstsize(*a) - i)
-    {
-        while (ft_find_index(*a, lstmin))
-            ft_ra(a, 1);
-    }
-    else
-    {
-        while(ft_find_index(*a, lstmin))
-            ft_rra(a, 1);
-    }
+
 }
 
 int ft_is_sorted(t_list *lst)
@@ -73,6 +74,6 @@ int main(int argc, char **argv)
     a = ft_fill_stack_a(argc, argv);
     if (!ft_is_sorted(a))
         ft_sort(&a);
-    ft_free(a);
+    ft_free(&a);
     return (0);
 }

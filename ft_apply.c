@@ -2,7 +2,7 @@
 
 int ft_apply_rrarrb(t_list **a, t_list **b, int nbr, char c)
 {
-    if (c = 'b')
+    if (c == 'b')
     {
         while (ft_find_index(*a, nbr) && ft_find_index_b(*b, nbr))
             ft_rrr(a, b);
@@ -71,11 +71,11 @@ int ft_apply_rarb(t_list **a, t_list **b, int nbr, char c)
 {
     if (c == 'b')
     {
-        while (ft_find_index(a, nbr) && ft_find_index_b(b, nbr))
+        while (ft_find_index(*a, nbr) && ft_find_index_b(*b, nbr))
             ft_rr(a, b);
-        while (ft_find_index(a, nbr))
+        while (ft_find_index(*a, nbr))
             ft_ra(a, 1);
-        while (ft_find_index_b(b, nbr))
+        while (ft_find_index_b(*b, nbr))
             ft_rb(b, 1);
         ft_pb(a, b);
     }

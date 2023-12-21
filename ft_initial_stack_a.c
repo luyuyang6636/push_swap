@@ -14,16 +14,18 @@ int	ft_atoi_special(const char *nptr)
 		if (*nptr == '-')
 			sign *= -1;
 		nptr++;
-	}	
+	}
+    if (!(*nptr >= '0' && *nptr <= '9'))
+        ft_error();
 	while (*nptr >= '0' && *nptr <= '9')
 	{
 		ret = ret * 10 + *nptr - '0';
 		nptr++;
 	}
     ret *= sign;
-    if (ret > INT_MAX || ret < INT_MIN)
+    if (ret > INT_MAX || ret < INT_MIN || *nptr)
         ft_error();
-	return (ret * sign);
+	return (ret);
 }
 
 void    ft_all_number(char **argv)
@@ -32,7 +34,7 @@ void    ft_all_number(char **argv)
     int j;
 
     i = 1;
-    while (argv[i++])
+    while (argv[i])
     {
         j = 0;
         while (argv[i][j])
@@ -44,6 +46,7 @@ void    ft_all_number(char **argv)
                 ft_error();
             j++;
         }
+        i++;
     }
 }
 
@@ -60,7 +63,7 @@ void    ft_lst_check_dup(t_list *a)
         while (a)
         {
             if (a->content == tmp->content)
-                ft_error;
+                ft_error();
             a = a->next;
         }
         tmp = tmp->next;

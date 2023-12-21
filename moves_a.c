@@ -39,7 +39,7 @@ void    ft_rra(t_list **a, int j)
         tmp = tmp->next;
     tmp->next = NULL;
     if (j == 1)
-        write (1, "rra\n", 4);
+        write(1, "rra\n", 4);
 }
 
 void    ft_sa(t_list **a, int i)
@@ -66,5 +66,5 @@ void    ft_pb(t_list **a, t_list **b)
     *b = *a;
     *a = (*a)->next;
     (*b)->next = tmp;
-    write (1, "pb\n", 3);
+    write(1, "pb\n", 3);
 }

@@ -4,6 +4,7 @@
 # include <stdio.h>
 # include <limits.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -28,6 +29,7 @@ t_list  **ft_sort_a(t_list **a, t_list **b);
 void    ft_sort_b_till_3(t_list **a, t_list **b);
 void    ft_sort_three(t_list **lst);
 int     ft_rotate_type_ab(t_list *a, t_list *b);
+int     ft_rotate_type_ba(t_list *a, t_list *b);
 int     ft_case_rrarrb(t_list *a, t_list *b, int nbr, char c);
 int     ft_case_rarrb(t_list *a, t_list *b, int nbr, char c);
 int     ft_case_rrarb(t_list *a, t_list *b, int nbr, char c);
