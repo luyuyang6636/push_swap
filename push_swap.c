@@ -60,7 +60,7 @@ int ft_is_sorted(t_list *lst)
 {
     while (lst && lst->next)
     {
-        if (lst->content > lst->next->content)
+        if ((lst->content > lst->next->content))
             return (0);
         lst = lst->next;
     }

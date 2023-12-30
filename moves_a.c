@@ -7,9 +7,10 @@ void    ft_ra(t_list **a, int j)
     if (!*a || !(*a)->next)
         return;
     tmp = *a;
-    *a = (*a)->next;
+    *a = ft_lstlast(*a);
+    (*a)->next = tmp;
+    *a = tmp->next;
     tmp->next = NULL;
-    ft_lstadd_back(a, tmp);
     if (j == 1)
         write(1, "ra\n", 3);
 }
@@ -35,8 +36,11 @@ void    ft_rra(t_list **a, int j)
         i++;
     }
     (*a)->next = tmp;
-    while (i-- > 1)
+    while (i > 1)
+    {
         tmp = tmp->next;
+        i--;
+    }
     tmp->next = NULL;
     if (j == 1)
         write(1, "rra\n", 4);

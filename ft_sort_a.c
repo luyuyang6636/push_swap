@@ -59,7 +59,7 @@ int ft_find_index_a(t_list *a, int nbr)
         i = ft_find_index(a, ft_lstmin(a));
     else
     {
-        while (!(nbr > a->content && nbr < a->next->content))
+        while (a->next != NULL && (a->content > nbr || a->next->content < nbr))
         {
             i++;
             a = a->next;

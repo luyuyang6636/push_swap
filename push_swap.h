@@ -41,7 +41,7 @@ int     ft_apply_rarb(t_list **a, t_list **b, int nbr, char c);
 int	    ft_lstsize(t_list *lst);
 t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *newnode);
 void    ft_ra(t_list **a, int j);
 void    ft_rra(t_list **a, int j);
 void    ft_pb(t_list **a, t_list **b);
