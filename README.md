@@ -34,4 +34,9 @@ The last element becomes the first one.
 
 `rrr` : rra and rrb at the same time.
 
-The target 
+The target for my sorting algorithm:
+* To sort 100 numbers in less than 700 moves
+* To sort 500 numbers in less than 5500 moves
+
+### To test my program:
+`git clone` my repository and `make` to compile the program, enter the numbers you want to sort as arguments to the program. Of course, with a large no. of numbers, can set it into a variable. 
